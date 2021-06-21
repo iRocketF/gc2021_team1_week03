@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5918179940335966172}
   m_Layer: 0
   m_Name: PlayerProjectile_placeholder
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 25
+  damage: 25
   blastEffect: {fileID: 387801595188855970, guid: 1ab5b4aea1f842c43bdca5cfd67aefec, type: 3}
 --- !u!65 &8502276537882060869
 BoxCollider:

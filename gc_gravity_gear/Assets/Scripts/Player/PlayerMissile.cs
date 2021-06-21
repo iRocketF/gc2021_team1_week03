@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMissile : MonoBehaviour
 {
     public float thrust;
+    public float damage;
 
     public GameObject blastEffect;
 
