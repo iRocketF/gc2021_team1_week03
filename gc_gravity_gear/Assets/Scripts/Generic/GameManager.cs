@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool isPlayerAlive;
+
+    private PlayerHealth pHealth;
+
     void Start()
     {
-        
+        pHealth = FindObjectOfType<PlayerHealth>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (pHealth.currentHealth <= 0f)
+            isPlayerAlive = false;
+        else
+            isPlayerAlive = true;
     }
 }
