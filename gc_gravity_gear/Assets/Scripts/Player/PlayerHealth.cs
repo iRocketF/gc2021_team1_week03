@@ -30,9 +30,9 @@ public class PlayerHealth : MonoBehaviour
             MercyTime();
     }
 
-    public void AddHealth()
+    public void AddHealth(float addedHP)
     {
-
+        currentHealth += addedHP;
     }
 
     public void TakeDamage(float dmg)
@@ -79,7 +79,12 @@ public class PlayerHealth : MonoBehaviour
         Destroy(GetComponentInChildren<PlayerCamera>());
         
         Rigidbody corpse = gameObject.AddComponent<Rigidbody>();
-
         corpse.AddForce(-transform.forward * deathForce + transform.right * deathForce);
+
+        AudioSource deathSound = gameObject.AddComponent<AudioSource>();
+        deathSound.clip = Resources.Load<AudioClip>("Sounds/death");
+        deathSound.Play();
+
+
     }
 }

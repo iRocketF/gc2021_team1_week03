@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public float health;
+    public float currentHealth;
+    public float maxHealth;
 
     public Color ogColor;
     public Color dmgColor;
@@ -15,6 +16,8 @@ public class BossHealth : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
+
         ogColor = GetComponent<Renderer>().material.color;
         dmgColor = Color.red;
         hasTakenDamage = false;
@@ -26,12 +29,12 @@ public class BossHealth : MonoBehaviour
             DamageColor();
     }
 
-    void TakeDamage(float dmg)
+    public void TakeDamage(float dmg)
     {
-        health = health - dmg;
+        currentHealth = currentHealth - dmg;
         hasTakenDamage = true;
 
-        if (health <= 0f)
+        if (currentHealth <= 0f)
             Destroy(transform.parent.gameObject);
     }
 
@@ -56,13 +59,4 @@ public class BossHealth : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            PlayerMissile missile = collision.gameObject.GetComponent<PlayerMissile>();
-
-            TakeDamage(missile.damage);
-        }
-    }
 }
