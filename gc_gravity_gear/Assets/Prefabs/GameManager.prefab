@@ -173,8 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerAlive: 0
-  combatMusic: {fileID: 0}
-  combatTracks:
+  isBossAlive: 0
+  gameSong: {fileID: 0}
+  gameTracks:
   - {fileID: 8300000, guid: cbc30fdc5a637ff4e8cb1a283054cf7c, type: 3}
   - {fileID: 8300000, guid: afc6fc42108788a438ae32bda23dd995, type: 3}
   - {fileID: 8300000, guid: 120b1e9204b9f0e498dba440612c2694, type: 3}
@@ -193,7 +194,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

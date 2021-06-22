@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public bool isPlayerAlive;
     public bool isBossAlive;
 
-    public AudioSource combatMusic;
-    public List<AudioClip> combatTracks;
+    public AudioSource gameSong;
+    public List<AudioClip> gameTracks;
     private BossAI boss;
     private BossHealth bHealth;
     private PlayerHealth pHealth;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         pHealth = FindObjectOfType<PlayerHealth>();
         bHealth = FindObjectOfType<BossHealth>();
-        combatMusic = GetComponent<AudioSource>();
+        gameSong = GetComponent<AudioSource>();
         boss = FindObjectOfType<BossAI>();
     }
 
@@ -43,31 +43,45 @@ public class GameManager : MonoBehaviour
 
     void CheckBossStatus()
     {
-
+        if (bHealth != null)
+            isBossAlive = true;
+        else
+            isBossAlive = false;
     }
 
     void MusicManager()
     {
-        if (!combatMusic.isPlaying)
-            combatMusic.Play();
+        if (!gameSong.isPlaying)
+            gameSong.Play();
 
-        if (boss.currentPhase == "passive")
+
+        if (isBossAlive)
         {
-            combatMusic.clip = combatTracks[0];
+            string songSwitch = boss.currentPhase;
+
+            switch (songSwitch)
+            {
+                case "passive":
+                    gameSong.clip = gameTracks[0];
+                    break;
+
+                case "phase1":
+                    gameSong.clip = gameTracks[1];
+                    break;
+
+                case "phase2":
+                    gameSong.clip = gameTracks[2];
+                    break;
+
+                case "phase3":
+                    gameSong.clip = gameTracks[3];
+                    break;
+
+            }
         }
-        else if (boss.currentPhase == "phase1")
-        {
-            combatMusic.clip = combatTracks[1];
-        }
-        else if (boss.currentPhase == "phase2")
-        {
-            combatMusic.clip = combatTracks[2];
-        }
-        else if (boss.currentPhase == "phase3")
-        {
-            combatMusic.clip = combatTracks[3];
-        }
+           
     }
+
 
     void Restart()
     {
