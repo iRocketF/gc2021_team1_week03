@@ -5212,7 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   force: 15
-  rotationForce: 3
+  rotationForce: 2
   target: {fileID: 0}
   blastEffect: {fileID: 387801595188855970, guid: 1ab5b4aea1f842c43bdca5cfd67aefec, type: 3}
 --- !u!82 &2294773933534504747
@@ -5235,8 +5235,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 5
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5322,7 +5322,7 @@ GameObject:
   - component: {fileID: 7325541749558104884}
   - component: {fileID: 3350610233186888160}
   m_Layer: 8
-  m_Name: w
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

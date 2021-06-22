@@ -7,13 +7,14 @@ using TMPro;
 public class PlayerHUD : MonoBehaviour
 {
     public GameManager manager;
+    public PlayerHealth health;
+    public BossHealth bossHealth;
 
     public Image healthBar;
     public Image bossHealthBar;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI deathText;
 
-    public PlayerHealth health;
-    public BossHealth bossHealth;
 
     private void Start()
     {
@@ -23,9 +24,14 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
-        healthText.text = Mathf.RoundToInt(health.currentHealth).ToString() + " / 100";
+        healthText.text = Mathf.RoundToInt(health.currentHealth).ToString() + " / " + health.maxHealth;
         healthBar.fillAmount = health.currentHealth / 100f;
 
         bossHealthBar.fillAmount = bossHealth.currentHealth / bossHealth.maxHealth;
+
+        if (manager.isPlayerAlive)
+            deathText.enabled = false;
+        else
+            deathText.enabled = true;
     }
 }

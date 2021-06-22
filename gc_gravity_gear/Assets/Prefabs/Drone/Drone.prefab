@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2363153942728716416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5356580899175132251}
+  m_Layer: 0
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5356580899175132251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363153942728716416}
+  m_LocalRotation: {x: 0.071671575, y: 0, z: 0, w: 0.9974283}
+  m_LocalPosition: {x: 0, y: -0.07500005, z: 0.796}
+  m_LocalScale: {x: 1, y: 1, z: 0.6666667}
+  m_Children: []
+  m_Father: {fileID: 8568449538800833406}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.22, y: 0, z: 0}
 --- !u!1 &8568449538800833407
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +60,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 5356580899175132251}
   m_Father: {fileID: 8568449539784069648}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -120,6 +151,7 @@ GameObject:
   - component: {fileID: 8568449539784069648}
   - component: {fileID: 8568449539784069649}
   - component: {fileID: 8568449539784069651}
+  - component: {fileID: 816922505}
   m_Layer: 7
   m_Name: Drone
   m_TagString: Untagged
@@ -181,3 +213,19 @@ MonoBehaviour:
   pingPongSpeed: 0.25
   minPingPongHeight: 1
   enemyObject: {fileID: 8568449538800833407}
+--- !u!114 &816922505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568449539784069654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e088c2f6220e54fbfca1db464b04e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5620056206517580895, guid: ab16d9983dd612a4380ca36c5cee2757, type: 3}
+  spawnPoint: {fileID: 5356580899175132251}
+  shootingDistance: 7
+  cooldownTime: 2
