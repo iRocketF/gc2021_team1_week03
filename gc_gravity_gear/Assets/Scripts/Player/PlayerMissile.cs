@@ -10,9 +10,9 @@ public class PlayerMissile : MonoBehaviour
     public GameObject blastEffect;
 
     private Rigidbody rBody;
-    
 
-    void Start ()
+
+    void Start()
     {
         rBody = GetComponent<Rigidbody>();
     }
@@ -24,8 +24,29 @@ public class PlayerMissile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            BossHealth bHealth = collision.gameObject.GetComponent<BossHealth>();
+            bHealth.TakeDamage(damage);
+            // bandaid to make sure dmg isn't dealt twice
+            damage = 0f;
 
-        Destroy(gameObject);
+            GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Bosscrit"))
+        {
+            BossHealth bHealth = collision.gameObject.transform.parent.GetComponentInChildren<BossHealth>();
+            bHealth.TakeDamage(damage * 2);
+            // bandaid to make sure dmg isn't dealt twice
+            damage = 0f;
+        }
+        else
+        {
+            GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+
+            Destroy(gameObject);
+        }
     }
 }
