@@ -33,6 +33,9 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(float addedHP)
     {
         currentHealth += addedHP;
+
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
     }
 
     public void TakeDamage(float dmg)
