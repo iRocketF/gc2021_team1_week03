@@ -12,10 +12,12 @@ public class BossMissileLauncher : MonoBehaviour
 
     public GameObject projectile;
     [SerializeField] private Transform projectileSpawn;
+    [SerializeField] private AudioSource shootSound;
 
     void Start ()
     {
         projectileSpawn = transform;
+        shootSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,6 +32,8 @@ public class BossMissileLauncher : MonoBehaviour
     void Fire()
     {
         isShooting = true;
+
+        shootSound.Play();
 
         GameObject bossMissileClone = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
 
