@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 66338446}
   - component: {fileID: 66338445}
   m_Layer: 0
-  m_Name: Beam (7)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ Transform:
   m_LocalScale: {x: 5.0000997, y: 0.25, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 55
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &66338445
 BoxCollider:
@@ -1259,7 +1259,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.50016564, z: 7.0002003}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 45
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &302608199
 BoxCollider:
@@ -1354,7 +1354,7 @@ Transform:
   m_LocalScale: {x: 8.749576, y: 3.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 43
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &323066708
 BoxCollider:
@@ -1622,7 +1622,7 @@ GameObject:
   - component: {fileID: 367563566}
   - component: {fileID: 367563565}
   m_Layer: 0
-  m_Name: Beam (6)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,7 +1640,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 54
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &367563565
 BoxCollider:
@@ -2942,6 +2942,133 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536206592}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &541463278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541463279}
+  - component: {fileID: 541463280}
+  m_Layer: 0
+  m_Name: Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541463279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541463278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1846083159}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &541463280
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541463278}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 722bbe34c3fb7d348bb489c59f279ca8, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &564185127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3462,7 @@ GameObject:
   - component: {fileID: 588016097}
   - component: {fileID: 588016096}
   m_Layer: 0
-  m_Name: Beam (2)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3353,7 +3480,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 50
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &588016096
 BoxCollider:
@@ -3430,7 +3557,7 @@ GameObject:
   - component: {fileID: 592935374}
   - component: {fileID: 592935373}
   m_Layer: 0
-  m_Name: Beam (15)
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3444,11 +3571,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592935371}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 23.5, y: 6, z: -0.0000012814997}
+  m_LocalPosition: {x: 23.5, y: 6, z: -0}
   m_LocalScale: {x: 1.5, y: 4, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 64
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &592935373
 BoxCollider:
@@ -4094,7 +4221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 49
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!65 &720637513
 BoxCollider:
@@ -4379,7 +4506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 46
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &787617114
 BoxCollider:
@@ -5196,7 +5323,7 @@ Transform:
   m_LocalScale: {x: 8.749576, y: 3.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 44
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &887782020
 BoxCollider:
@@ -5273,7 +5400,7 @@ GameObject:
   - component: {fileID: 896272335}
   - component: {fileID: 896272334}
   m_Layer: 0
-  m_Name: Beam (5)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5291,7 +5418,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 53
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &896272334
 BoxCollider:
@@ -5368,7 +5495,7 @@ GameObject:
   - component: {fileID: 921485828}
   - component: {fileID: 921485827}
   m_Layer: 0
-  m_Name: Beam (17)
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5386,7 +5513,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 6.999825}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 68
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &921485827
 BoxCollider:
@@ -6034,7 +6161,7 @@ GameObject:
   - component: {fileID: 1028135296}
   - component: {fileID: 1028135295}
   m_Layer: 0
-  m_Name: Beam (16)
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6048,11 +6175,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028135293}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -23.5, y: 6, z: 0.0000043213363}
+  m_LocalPosition: {x: -23.5, y: 6, z: 0}
   m_LocalScale: {x: 1.5, y: 4, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 65
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1028135295
 BoxCollider:
@@ -6319,9 +6446,16 @@ Transform:
   - {fileID: 1010509369}
   - {fileID: 405563887}
   - {fileID: 1975806529}
+  - {fileID: 1340368580}
+  - {fileID: 2121868692}
+  - {fileID: 592935372}
+  - {fileID: 1028135294}
+  - {fileID: 921485826}
   - {fileID: 323066707}
   - {fileID: 887782019}
   - {fileID: 302608198}
+  - {fileID: 1062982238}
+  - {fileID: 1953864722}
   - {fileID: 787617113}
   - {fileID: 1749133761}
   - {fileID: 1657586118}
@@ -6338,13 +6472,6 @@ Transform:
   - {fileID: 1953639062}
   - {fileID: 1409746495}
   - {fileID: 1099111070}
-  - {fileID: 1340368580}
-  - {fileID: 2121868692}
-  - {fileID: 592935372}
-  - {fileID: 1028135294}
-  - {fileID: 1062982238}
-  - {fileID: 1953864722}
-  - {fileID: 921485826}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6456,7 +6583,7 @@ GameObject:
   - component: {fileID: 1062982240}
   - component: {fileID: 1062982239}
   m_Layer: 0
-  m_Name: Window (1)
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6474,7 +6601,7 @@ Transform:
   m_LocalScale: {x: 8.749576, y: 3.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 66
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1062982239
 BoxCollider:
@@ -6646,7 +6773,7 @@ GameObject:
   - component: {fileID: 1099111072}
   - component: {fileID: 1099111071}
   m_Layer: 0
-  m_Name: Beam (13)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6664,7 +6791,7 @@ Transform:
   m_LocalScale: {x: 5.0000997, y: 0.25, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 61
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1099111071
 BoxCollider:
@@ -6741,7 +6868,7 @@ GameObject:
   - component: {fileID: 1101798831}
   - component: {fileID: 1101798830}
   m_Layer: 0
-  m_Name: Beam (9)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6759,7 +6886,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 57
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1101798830
 BoxCollider:
@@ -7026,7 +7153,7 @@ GameObject:
   - component: {fileID: 1175181974}
   - component: {fileID: 1175181973}
   m_Layer: 0
-  m_Name: Beam (4)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7044,7 +7171,7 @@ Transform:
   m_LocalScale: {x: 5.0000997, y: 0.25, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 52
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1175181973
 BoxCollider:
@@ -7824,7 +7951,7 @@ GameObject:
   - component: {fileID: 1340368582}
   - component: {fileID: 1340368581}
   m_Layer: 0
-  m_Name: Beam (1)
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7838,11 +7965,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340368579}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -18.375, y: 7.75, z: 0.000000059604634}
+  m_LocalPosition: {x: -18.375, y: 7.75, z: 0}
   m_LocalScale: {x: 1.5, y: 0.5, z: 10.7503}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 62
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1340368581
 BoxCollider:
@@ -8341,7 +8468,7 @@ GameObject:
   - component: {fileID: 1409746497}
   - component: {fileID: 1409746496}
   m_Layer: 0
-  m_Name: Beam (12)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8359,7 +8486,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 60
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1409746496
 BoxCollider:
@@ -8573,13 +8700,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3919979714817031820, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 193
+    - target: {fileID: 3919979715600831272, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.25
       objectReference: {fileID: 0}
-    - target: {fileID: 3919979715933346442, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
-      propertyPath: maxHealth
-      value: 10000
+    - target: {fileID: 3919979715600831272, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919979715600831274, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b18de365445fa1e4c8674c78527829ff, type: 2}
+    - target: {fileID: 3919979715600831279, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
+      propertyPath: m_Name
+      value: LaserWeapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
@@ -9184,7 +9319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 48
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
 --- !u!65 &1657586119
 BoxCollider:
@@ -9564,7 +9699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 47
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1749133762
 BoxCollider:
@@ -9831,7 +9966,7 @@ GameObject:
   - component: {fileID: 1837673715}
   - component: {fileID: 1837673714}
   m_Layer: 0
-  m_Name: Beam (10)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9849,7 +9984,7 @@ Transform:
   m_LocalScale: {x: 5.0000997, y: 0.25, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 58
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1837673714
 BoxCollider:
@@ -9913,6 +10048,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837673712}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1846083159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7773221476187587892, guid: 5bb298496a148814eb8bd17615cb7179, type: 3}
+  m_PrefabInstance: {fileID: 502210835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866624016
 GameObject:
   m_ObjectHideFlags: 0
@@ -10416,7 +10556,7 @@ GameObject:
   - component: {fileID: 1953639064}
   - component: {fileID: 1953639063}
   m_Layer: 0
-  m_Name: Beam (11)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10434,7 +10574,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 59
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1953639063
 BoxCollider:
@@ -10511,7 +10651,7 @@ GameObject:
   - component: {fileID: 1953864724}
   - component: {fileID: 1953864723}
   m_Layer: 0
-  m_Name: Window (2)
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10529,7 +10669,7 @@ Transform:
   m_LocalScale: {x: 8.749576, y: 3.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 67
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1953864723
 BoxCollider:
@@ -10834,7 +10974,7 @@ GameObject:
   - component: {fileID: 2008551624}
   - component: {fileID: 2008551623}
   m_Layer: 0
-  m_Name: Beam (3)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10852,7 +10992,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 51
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &2008551623
 BoxCollider:
@@ -11307,7 +11447,7 @@ GameObject:
   - component: {fileID: 2068513357}
   - component: {fileID: 2068513356}
   m_Layer: 0
-  m_Name: Beam (8)
+  m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11325,7 +11465,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 56
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &2068513356
 BoxCollider:
@@ -11592,7 +11732,7 @@ GameObject:
   - component: {fileID: 2121868694}
   - component: {fileID: 2121868693}
   m_Layer: 0
-  m_Name: Beam (14)
+  m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11606,11 +11746,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121868691}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 18.375, y: 7.75, z: -0.0000043213363}
+  m_LocalPosition: {x: 18.375, y: 7.75, z: -0}
   m_LocalScale: {x: 1.5, y: 0.5, z: 10.7503}
   m_Children: []
   m_Father: {fileID: 1045289375}
-  m_RootOrder: 63
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &2121868693
 BoxCollider:
