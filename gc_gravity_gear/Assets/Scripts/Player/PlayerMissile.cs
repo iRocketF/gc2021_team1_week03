@@ -39,8 +39,6 @@ public class PlayerMissile : MonoBehaviour
                 GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
                 spawnedEffect = true;
             }
-            
-
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Bosscrit"))
