@@ -104,9 +104,11 @@ public class BossAI : MonoBehaviour
             // Debug.Log("Phase3");
             laserWeapon.gameObject.SetActive(true);
             missileWeapon.gameObject.SetActive(true);
+            droneSpawner.gameObject.SetActive(true);
 
             missileWeapon.fireRate = 1f;
-            laserWeapon.damage = 4f;
+            droneSpawner.spawnRate = 0.4f;
+            laserWeapon.damage = 3f;
 
             aggroTimer += Time.deltaTime;
 

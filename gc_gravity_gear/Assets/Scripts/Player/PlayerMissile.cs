@@ -7,6 +7,8 @@ public class PlayerMissile : MonoBehaviour
     public float thrust;
     public float damage;
 
+    private bool spawnedEffect;
+
     public GameObject blastEffect;
 
     private Rigidbody rBody;
@@ -14,6 +16,7 @@ public class PlayerMissile : MonoBehaviour
 
     void Start()
     {
+        spawnedEffect = false;
         rBody = GetComponent<Rigidbody>();
     }
 
@@ -31,7 +34,12 @@ public class PlayerMissile : MonoBehaviour
             // bandaid to make sure dmg isn't dealt twice
             damage = 0f;
 
-            GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+            if (!spawnedEffect)
+            {
+                GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+                spawnedEffect = true;
+            }
+            
 
             Destroy(gameObject);
         }
@@ -41,11 +49,21 @@ public class PlayerMissile : MonoBehaviour
             bHealth.TakeDamage(damage * 2);
             // bandaid to make sure dmg isn't dealt twice
             damage = 0f;
+
+            if (!spawnedEffect)
+            {
+                GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+                spawnedEffect = true;
+            }
+            Destroy(gameObject);
         }
         else
         {
-            GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
-
+            if (!spawnedEffect)
+            {
+                GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+                spawnedEffect = true;
+            }
             Destroy(gameObject);
         }
     }
