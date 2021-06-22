@@ -42,31 +42,30 @@ public class BossAI : MonoBehaviour
 
     void Update()
     {
-        if (health.currentHealth > healthThird * 2)
+        if (isAggressive && health.currentHealth > health.maxHealth - healthThird)
             PhaseOne();
-        else if (health.currentHealth > healthThird)
+        else if (isAggressive && health.currentHealth > healthThird)
             PhaseTwo();
-        else if (health.currentHealth < healthThird)
+        else if (isAggressive && health.currentHealth < healthThird)
             PhaseThree();
+        else
+            PassivePhase();
     }
 
     void PassivePhase()
     {
-        lastPhase = currentPhase;
         currentPhase = "passive";
         bossAnimator.SetBool("isIdle", true);
-
-        if (lastPhase == "phase1")
-            bossAnimator.SetTrigger("EndPhase1");
-        else if (lastPhase == "phase2")
-            bossAnimator.SetTrigger("EndPhase2");
-        else if (lastPhase == "phase3")
-            bossAnimator.SetTrigger("EndPhase3");
 
 
         laserWeapon.gameObject.SetActive(false);
         missileWeapon.gameObject.SetActive(false);
         droneSpawner.gameObject.SetActive(false);
+
+        bossAnimator.SetBool("isLaserActive", false);
+        bossAnimator.SetBool("isMissileActive", false);
+        bossAnimator.SetBool("areBothActive", false);
+
 
         passiveTimer += Time.deltaTime;
 
@@ -79,81 +78,83 @@ public class BossAI : MonoBehaviour
 
     void PhaseOne()
     {
-        if (isAggressive)
+        // Debug.Log("Phase1");
+
+        currentPhase = "phase1";
+
+        bossAnimator.SetBool("isIdle", false);
+
+        droneSpawner.gameObject.SetActive(true);
+        laserWeapon.gameObject.SetActive(true);
+
+        bossAnimator.SetBool("isLaserActive", true);
+
+        aggroTimer += Time.deltaTime;
+
+        if (aggroTimer >= timeToAggro)
         {
-            currentPhase = "phase1";
+            isAggressive = false;
 
-            bossAnimator.SetBool("isIdle", false);
-            bossAnimator.SetTrigger("StartPhase1");
-
-            droneSpawner.gameObject.SetActive(true);
-            laserWeapon.gameObject.SetActive(true);
-
-            bossAnimator.SetBool("isLaserActive", true);
-
-            aggroTimer += Time.deltaTime;
-
-            if (aggroTimer >= timeToAggro)
-            {
-                isAggressive = false;
-
-                bossAnimator.SetBool("isLaserActive", false);
-                aggroTimer = 0f;
-            }
+            bossAnimator.SetBool("isLaserActive", false);
+            aggroTimer = 0f;
         }
-        else
-            PassivePhase();
     }
 
     void PhaseTwo()
     {
-        if (isAggressive)
+        // Debug.Log("Phase2");
+
+        timeToAggro = 42f;
+
+        currentPhase = "phase2";
+
+        bossAnimator.SetBool("isIdle", false);
+
+        droneSpawner.gameObject.SetActive(true);
+        missileWeapon.gameObject.SetActive(true);
+        laserWeapon.gameObject.SetActive(false);
+
+        bossAnimator.SetBool("isLaserActive", false);
+        bossAnimator.SetBool("isMissileActive", true);
+
+        aggroTimer += Time.deltaTime;
+
+        if (aggroTimer >= timeToAggro)
         {
-            currentPhase = "phase2";
-
-            bossAnimator.SetBool("isIdle", false);
-            bossAnimator.SetTrigger("StartPhase1");
-
-            missileWeapon.gameObject.SetActive(true);
-
-            bossAnimator.SetBool("isMissileActive", true);
-
-            aggroTimer += Time.deltaTime;
-
-            if (aggroTimer >= timeToAggro)
-            {
-                isAggressive = false;
-                bossAnimator.SetBool("isMissileActive", true);
-                aggroTimer = 0f;
-            }
+            isAggressive = false;
+            bossAnimator.SetBool("isMissileActive", false);
+            aggroTimer = 0f;
         }
-        else
-            PassivePhase();
     }
 
     void PhaseThree()
     {
-        if (isAggressive)
+        // Debug.Log("Phase3");
+
+        currentPhase = "phase3";
+
+        bossAnimator.SetBool("isIdle", false);
+
+        laserWeapon.gameObject.SetActive(true);
+        missileWeapon.gameObject.SetActive(true);
+        droneSpawner.gameObject.SetActive(true);
+
+        bossAnimator.SetBool("areBothActive", true);
+        bossAnimator.SetBool("isMissileActive", false);
+        bossAnimator.SetBool("isLaserActive", false);
+
+        missileWeapon.fireRate = 1f;
+        droneSpawner.spawnRate = 0.5f;
+        laserWeapon.damage = 4f;
+
+        aggroTimer += Time.deltaTime;
+
+        if (aggroTimer >= timeToAggro)
         {
-            currentPhase = "phase3";
-
-            laserWeapon.gameObject.SetActive(true);
-            missileWeapon.gameObject.SetActive(true);
-            droneSpawner.gameObject.SetActive(true);
-
-            missileWeapon.fireRate = 1f;
-            droneSpawner.spawnRate = 0.4f;
-            laserWeapon.damage = 3f;
-
-            aggroTimer += Time.deltaTime;
-
-            if (aggroTimer >= timeToAggro)
-            {
-                isAggressive = false;
-                aggroTimer = 0f;
-            }
+            isAggressive = false;
+            bossAnimator.SetBool("areBothActive", false);
+            aggroTimer = 0f;
         }
-        else
-            PassivePhase();
+
     }
 }
