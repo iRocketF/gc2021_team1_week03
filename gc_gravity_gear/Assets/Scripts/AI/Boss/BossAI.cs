@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossAI : MonoBehaviour
 {
+    public string currentPhase;
+    public string lastPhase;
     public float timeToAggro;
     public float timeToPassive;
     [SerializeField] private float aggroTimer;
@@ -12,6 +14,7 @@ public class BossAI : MonoBehaviour
 
     public bool isAggressive;
 
+    [SerializeField] private Animator bossAnimator;
     [SerializeField] private BossHealth health;
     [SerializeField] private LaserBeam laserWeapon;
     [SerializeField] private BossMissileLauncher missileWeapon;
@@ -27,6 +30,7 @@ public class BossAI : MonoBehaviour
         laserWeapon = GetComponentInChildren<LaserBeam>();
         missileWeapon = GetComponentInChildren<BossMissileLauncher>();
         droneSpawner = GetComponentInChildren<BossDroneSpawner>();
+        bossAnimator = GetComponentInChildren<Animator>();
 
         laserWeapon.gameObject.SetActive(false);
         missileWeapon.gameObject.SetActive(false);
@@ -48,6 +52,18 @@ public class BossAI : MonoBehaviour
 
     void PassivePhase()
     {
+        lastPhase = currentPhase;
+        currentPhase = "passive";
+        bossAnimator.SetBool("isIdle", true);
+
+        if (lastPhase == "phase1")
+            bossAnimator.SetTrigger("EndPhase1");
+        else if (lastPhase == "phase2")
+            bossAnimator.SetTrigger("EndPhase2");
+        else if (lastPhase == "phase3")
+            bossAnimator.SetTrigger("EndPhase3");
+
+
         laserWeapon.gameObject.SetActive(false);
         missileWeapon.gameObject.SetActive(false);
         droneSpawner.gameObject.SetActive(false);
@@ -65,13 +81,23 @@ public class BossAI : MonoBehaviour
     {
         if (isAggressive)
         {
+            currentPhase = "phase1";
+
+            bossAnimator.SetBool("isIdle", false);
+            bossAnimator.SetTrigger("StartPhase1");
+
             droneSpawner.gameObject.SetActive(true);
             laserWeapon.gameObject.SetActive(true);
+
+            bossAnimator.SetBool("isLaserActive", true);
+
             aggroTimer += Time.deltaTime;
 
             if (aggroTimer >= timeToAggro)
             {
                 isAggressive = false;
+
+                bossAnimator.SetBool("isLaserActive", false);
                 aggroTimer = 0f;
             }
         }
@@ -83,13 +109,21 @@ public class BossAI : MonoBehaviour
     {
         if (isAggressive)
         {
-            laserWeapon.gameObject.SetActive(true);
+            currentPhase = "phase2";
+
+            bossAnimator.SetBool("isIdle", false);
+            bossAnimator.SetTrigger("StartPhase1");
+
             missileWeapon.gameObject.SetActive(true);
+
+            bossAnimator.SetBool("isMissileActive", true);
+
             aggroTimer += Time.deltaTime;
 
             if (aggroTimer >= timeToAggro)
             {
                 isAggressive = false;
+                bossAnimator.SetBool("isMissileActive", true);
                 aggroTimer = 0f;
             }
         }
@@ -101,7 +135,8 @@ public class BossAI : MonoBehaviour
     {
         if (isAggressive)
         {
-            // Debug.Log("Phase3");
+            currentPhase = "phase3";
+
             laserWeapon.gameObject.SetActive(true);
             missileWeapon.gameObject.SetActive(true);
             droneSpawner.gameObject.SetActive(true);

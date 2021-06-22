@@ -18,15 +18,15 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        ogColor = GetComponent<Renderer>().material.color;
-        dmgColor = Color.red;
+        //ogColor = GetComponent<Renderer>().material.color;
+        //dmgColor = Color.red;
         hasTakenDamage = false;
     }
 
     void Update()
     {
-        if (hasTakenDamage)
-            DamageColor();
+        // if (hasTakenDamage)
+            // DamageColor();
     }
 
     public void TakeDamage(float dmg)

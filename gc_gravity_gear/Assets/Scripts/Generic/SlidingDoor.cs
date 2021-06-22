@@ -12,6 +12,8 @@ public class SlidingDoor : MonoBehaviour
     public float openRatio;
     public float autoCloseTime;
     public float doorTimer;
+    public float timesUsed;
+    public float maxUses;
 
     private Vector3 currentPos;
     private Vector3 nextPos;
@@ -55,6 +57,11 @@ public class SlidingDoor : MonoBehaviour
 
             isMoving = false;
             openRatio = 0f;
+
+            timesUsed++;
+
+            if (timesUsed >= maxUses)
+                isLocked = true;
         }
     }
 
