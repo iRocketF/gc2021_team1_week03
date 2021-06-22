@@ -12,7 +12,9 @@ public class BossAI : MonoBehaviour
     [SerializeField] private float passiveTimer;
     [SerializeField] private float healthThird;
 
-    public bool isAggressive;
+    
+    public bool isActive;
+    [SerializeField] private bool isAggressive;
 
     [SerializeField] private Animator bossAnimator;
     [SerializeField] private BossHealth health;
@@ -36,20 +38,25 @@ public class BossAI : MonoBehaviour
         missileWeapon.gameObject.SetActive(false);
         droneSpawner.gameObject.SetActive(false);
 
+        isActive = false;
         healthThird = health.maxHealth / 3;
 
     }
 
     void Update()
     {
-        if (isAggressive && health.currentHealth > health.maxHealth - healthThird)
-            PhaseOne();
-        else if (isAggressive && health.currentHealth > healthThird)
-            PhaseTwo();
-        else if (isAggressive && health.currentHealth < healthThird)
-            PhaseThree();
-        else
-            PassivePhase();
+        if(isActive)
+        {
+            if (isAggressive && health.currentHealth > health.maxHealth - healthThird)
+                PhaseOne();
+            else if (isAggressive && health.currentHealth > healthThird)
+                PhaseTwo();
+            else if (isAggressive && health.currentHealth < healthThird)
+                PhaseThree();
+            else
+                PassivePhase();
+        }
+        
     }
 
     void PassivePhase()

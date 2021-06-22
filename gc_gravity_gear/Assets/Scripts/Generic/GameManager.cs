@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
 
             switch (songSwitch)
             {
+                case "":
+                    gameSong.clip = gameTracks[0];
+                    break;
                 case "passive":
                     gameSong.clip = gameTracks[0];
                     break;
@@ -79,6 +82,8 @@ public class GameManager : MonoBehaviour
 
             }
         }
+        else
+            gameSong.clip = gameTracks[0];
            
     }
 
