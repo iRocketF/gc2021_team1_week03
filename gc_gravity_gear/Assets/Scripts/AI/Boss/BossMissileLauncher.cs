@@ -9,8 +9,6 @@ public class BossMissileLauncher : MonoBehaviour
 
     public float fireRate;
     private float nextTimeToFire;
-    public float attackCooldown;
-    public float timer;
 
     public GameObject projectile;
     [SerializeField] private Transform projectileSpawn;

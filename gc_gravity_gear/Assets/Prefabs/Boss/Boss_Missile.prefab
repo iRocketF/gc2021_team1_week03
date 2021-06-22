@@ -5212,7 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   force: 15
-  rotationForce: 1.5
+  rotationForce: 2
   target: {fileID: 0}
   blastEffect: {fileID: 387801595188855970, guid: 1ab5b4aea1f842c43bdca5cfd67aefec, type: 3}
 --- !u!82 &2294773933534504747

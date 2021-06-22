@@ -46,10 +46,56 @@ MonoBehaviour:
   isAttackEnabled: 1
   isShooting: 0
   fireRate: 0.5
-  attackCooldown: 0
-  timer: 0
   projectile: {fileID: 4102840517956924509, guid: 0bc282f17afc04740af752b1cf5748cc, type: 3}
   projectileSpawn: {fileID: 1002188248}
+--- !u!1 &694480379918540186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9159246473563485309}
+  - component: {fileID: 4675121956091732525}
+  m_Layer: 0
+  m_Name: DroneSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9159246473563485309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694480379918540186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5474735e-13, y: 0.25, z: -12.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3919979714423220975}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4675121956091732525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694480379918540186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b611097d6db3a9241bfd8b6472c5ae0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawns: 0
+  spawnRate: 0.2
+  nextTimeToSpawn: 0
+  droneSpawn: {fileID: 0}
+  drone: {fileID: 8568449539784069654, guid: 67bdccc196b8f6844863a82578df0cbf, type: 3}
 --- !u!1 &2546873540793839745
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +214,7 @@ Transform:
   - {fileID: 4909751659490835992}
   - {fileID: 124429606915166456}
   - {fileID: 1686187994156313557}
+  - {fileID: 9159246473563485309}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,6 +247,7 @@ MonoBehaviour:
   timeToPassive: 10
   aggroTimer: 0
   passiveTimer: 0
+  healthThird: 0
   isAggressive: 1
   health: {fileID: 0}
   laserWeapon: {fileID: 0}
@@ -217,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  turnSpeed: 0.5
+  turnSpeed: 0.4
 --- !u!1 &3919979714689256711
 GameObject:
   m_ObjectHideFlags: 0
