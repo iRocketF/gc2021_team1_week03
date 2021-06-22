@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
         Destroy(GetComponentInChildren<PlayerCamera>());
         
         Rigidbody corpse = gameObject.AddComponent<Rigidbody>();
+        CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
         corpse.AddForce(-transform.forward * deathForce + transform.right * deathForce);
 
         hurtSound.clip = Resources.Load<AudioClip>("Sounds/PlayerSounds/death");
