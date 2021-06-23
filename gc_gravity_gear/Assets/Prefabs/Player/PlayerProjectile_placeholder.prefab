@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3335800432962672811}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!198 &8157048390873199644
 ParticleSystem:
@@ -4836,7 +4836,7 @@ Transform:
   - {fileID: 428078038172971456}
   - {fileID: 3975343320931350097}
   m_Father: {fileID: 3335800432962672811}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!33 &8905324671509357661
 MeshFilter:
@@ -5013,8 +5013,8 @@ Transform:
   m_LocalPosition: {x: 1, y: 1.75, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2407653872790007862}
   - {fileID: 6775850473162510229}
+  - {fileID: 2407653872790007862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5046,7 +5046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d2a77a1f3e60a43aef0a49ce8f3b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 25
+  thrust: 35
   damage: 25
   blastEffect: {fileID: 387801595188855970, guid: 1ab5b4aea1f842c43bdca5cfd67aefec, type: 3}
 --- !u!65 &8502276537882060869

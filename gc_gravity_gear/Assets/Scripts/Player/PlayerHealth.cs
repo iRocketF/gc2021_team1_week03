@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public bool hasTakenDamage;
     public bool isInvincible;
 
+    public AudioSource hurtSound;
+    public List<AudioClip> hurtSounds;
 
     private float timer;
 
@@ -20,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        hurtSound = GetComponent<AudioSource>();
         
     }
 
@@ -42,6 +45,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
+            int i = Random.Range(0, hurtSounds.Count);
+            hurtSound.clip = hurtSounds[i];
+            hurtSound.Play();
             currentHealth = currentHealth - dmg;
 
             if (currentHealth <= 0f)
@@ -82,12 +88,11 @@ public class PlayerHealth : MonoBehaviour
         Destroy(GetComponentInChildren<PlayerCamera>());
         
         Rigidbody corpse = gameObject.AddComponent<Rigidbody>();
+        CapsuleCollider collider = gameObject.AddComponent<CapsuleCollider>();
         corpse.AddForce(-transform.forward * deathForce + transform.right * deathForce);
 
-        AudioSource deathSound = gameObject.AddComponent<AudioSource>();
-        deathSound.clip = Resources.Load<AudioClip>("Sounds/death");
-        deathSound.Play();
-
+        hurtSound.clip = Resources.Load<AudioClip>("Sounds/PlayerSounds/death");
+        hurtSound.Play();
 
     }
 }
