@@ -10,9 +10,12 @@ public class DroneMissile : MonoBehaviour
 
     private Rigidbody rb;
 
+    private GameManager manager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -22,7 +25,7 @@ public class DroneMissile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && manager.isPlayerAlive)
         {
             PlayerHealth pHealth = other.gameObject.GetComponent<PlayerHealth>();
             pHealth.TakeDamage(damage);
