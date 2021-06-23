@@ -7,26 +7,23 @@ public class BossHealth : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
-    public Color ogColor;
-    public Color dmgColor;
     public float dmgTimer;
     public float dmgCooldown;
 
     public bool hasTakenDamage;
 
+    public GameObject deathEffect;
+
     void Start()
     {
         currentHealth = maxHealth;
 
-        //ogColor = GetComponent<Renderer>().material.color;
-        //dmgColor = Color.red;
         hasTakenDamage = false;
     }
 
     void Update()
     {
-        // if (hasTakenDamage)
-            // DamageColor();
+
     }
 
     public void TakeDamage(float dmg)
@@ -35,28 +32,25 @@ public class BossHealth : MonoBehaviour
         hasTakenDamage = true;
 
         if (currentHealth <= 0f)
-            Destroy(transform.parent.gameObject);
+            Death();
     }
 
     void DamageColor ()
     {
-        GetComponent<Renderer>().material.color = dmgColor;
-
         if (dmgTimer < dmgCooldown)
             dmgTimer += Time.deltaTime;
         else if (dmgTimer >= dmgCooldown)
         {
             dmgTimer = 0f;
-            GetComponent<Renderer>().material.color = ogColor;
             hasTakenDamage = false;
         }
-
-
     }
 
-    void Invulnerability()
+    void Death()
     {
+        GameObject deathEffectClone = Instantiate(deathEffect, transform.position, transform.rotation);
 
+        Destroy(transform.parent.gameObject);
     }
 
 }
