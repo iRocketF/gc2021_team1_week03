@@ -151,7 +151,7 @@ public class BossAI : MonoBehaviour
         bossAnimator.SetBool("isLaserActive", false);
 
         missileWeapon.fireRate = 1f;
-        droneSpawner.spawnRate = 0.5f;
+        droneSpawner.spawnRate = 0.4f;
         laserWeapon.damage = 4f;
 
         aggroTimer += Time.deltaTime;
