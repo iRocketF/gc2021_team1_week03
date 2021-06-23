@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private BossHealth bHealth;
     private PlayerHealth pHealth;
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity;
 
     public bool gameSettingsOK = false;
 
@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        gameSong = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,12 +45,12 @@ public class GameManager : MonoBehaviour
             CheckPlayerStatus();
             CheckBossStatus();
 
-            MusicManager();
-
             if (!isPlayerAlive)
                 if (Input.GetButtonDown("Restart"))
                     Restart();
         }
+
+        MusicManager();
     }
 
     void CheckPlayerStatus()

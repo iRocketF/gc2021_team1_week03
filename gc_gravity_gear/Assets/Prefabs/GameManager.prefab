@@ -180,7 +180,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: afc6fc42108788a438ae32bda23dd995, type: 3}
   - {fileID: 8300000, guid: 120b1e9204b9f0e498dba440612c2694, type: 3}
   - {fileID: 8300000, guid: f26ffd197f34a4348b07de4ae02a17e9, type: 3}
-  mouseSensitivity: 100
+  mouseSensitivity: 250
   gameSettingsOK: 0
 --- !u!82 &1385094572034162893
 AudioSource:
