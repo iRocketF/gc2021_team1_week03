@@ -14,11 +14,14 @@ public class DroneWeapon : MonoBehaviour
     [SerializeField] private float cooldownTime;
     private float timer;
 
+    private GameManager manager;
+
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        player = GameObject.Find("Player");
         shootSound = GetComponent<AudioSource>();
         timer = cooldownTime;
+        manager = FindObjectOfType<GameManager>();
     }
 
 
@@ -26,9 +29,12 @@ public class DroneWeapon : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (CheckDistance() && timer <= 0)
+        if (manager.isPlayerAlive)
         {
-            ShootPlayer();
+            if (CheckDistance() && timer <= 0)
+            {
+                ShootPlayer();
+            }
         }
     }
 

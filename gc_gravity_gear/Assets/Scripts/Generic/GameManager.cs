@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,24 +14,43 @@ public class GameManager : MonoBehaviour
     private BossHealth bHealth;
     private PlayerHealth pHealth;
 
+    public float mouseSensitivity;
+
+    public bool gameSettingsOK = false;
+
     void Start()
     {
-        pHealth = FindObjectOfType<PlayerHealth>();
-        bHealth = FindObjectOfType<BossHealth>();
+        GameObject[] managers = GameObject.FindGameObjectsWithTag("GameController");
+
+        if (managers.Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         gameSong = GetComponent<AudioSource>();
-        boss = FindObjectOfType<BossAI>();
     }
 
     void Update()
     {
-        CheckPlayerStatus();
-        CheckBossStatus();
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        {
+            if (!gameSettingsOK)
+            {
+                Debug.Log("Set them up");
+                SetGameSettings();
+            }
+
+            CheckPlayerStatus();
+            CheckBossStatus();
+
+            if (!isPlayerAlive)
+                if (Input.GetButtonDown("Restart"))
+                    Restart();
+        }
 
         MusicManager();
-
-        if (!isPlayerAlive)
-            if (Input.GetButtonDown("Restart"))
-                SceneManager.LoadScene(0);
     }
 
     void CheckPlayerStatus()
@@ -90,6 +110,17 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
-        
+        gameSettingsOK = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void SetGameSettings()
+    {
+        gameSettingsOK = true;
+
+        pHealth = FindObjectOfType<PlayerHealth>();
+        bHealth = FindObjectOfType<BossHealth>();
+        gameSong = GetComponent<AudioSource>();
+        boss = FindObjectOfType<BossAI>();
     }
 }

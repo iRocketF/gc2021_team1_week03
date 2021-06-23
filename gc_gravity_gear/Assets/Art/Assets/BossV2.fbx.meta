@@ -12,7 +12,57 @@ ModelImporter:
   - first:
       74: -5957555721554322007
     second: AttackBothAnimationPart3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal1
+    second: {fileID: 2100000, guid: cbe6293bbd982f94eada6c399bbcda8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal2
+    second: {fileID: 2100000, guid: f961f3c29f296d34e915b39791cdeda1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal3
+    second: {fileID: 2100000, guid: 40bb14ff98904cf49889dbb9d6fe211c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal4
+    second: {fileID: 2100000, guid: 6b0d0a1766a0cb2489ff5cbf28906655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic1
+    second: {fileID: 2100000, guid: 8863d918ea7d1744ca06baf758a63b30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic2
+    second: {fileID: 2100000, guid: ac53608edaf1ce84d98cef47a973c249, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic3
+    second: {fileID: 2100000, guid: 53c38c9999e962b47bc8594615e032e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic4
+    second: {fileID: 2100000, guid: 76ef370f0185323478733d57aa5569c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic5
+    second: {fileID: 2100000, guid: 02dd5a79fba32294da8e7240891c8d1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic6
+    second: {fileID: 2100000, guid: b7c9bde11e4423848bef8118f28423be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

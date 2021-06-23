@@ -412,12 +412,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pController: {fileID: 0}
   pCam: {fileID: 0}
-  speed: 6
+  speed: 8
   gravity: -9.81
-  jumpHeight: 1.2
+  jumpHeight: 1.3
   dashCooldown: 0.7
-  dashSpeed: 4
-  maxDashLength: 4
+  dashSpeed: 6
+  maxDashLength: 6
   isDashing: 0
   hasDashed: 0
   velocity: {x: 0, y: 0, z: 0}
@@ -480,7 +480,7 @@ AudioSource:
   m_GameObject: {fileID: 3011063805543288590}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 62ef3b89eb546e145af1591c32d1804b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -669,7 +669,7 @@ RectTransform:
   m_GameObject: {fileID: 4174191949034175699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1598308962933869019}
   m_RootOrder: 5
