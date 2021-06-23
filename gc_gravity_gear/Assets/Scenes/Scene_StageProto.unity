@@ -10109,10 +10109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1895864163424434891, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3919979714423220973, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
       propertyPath: m_Name
       value: boss
@@ -10160,10 +10156,6 @@ PrefabInstance:
     - target: {fileID: 3919979714423220975, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9036036445801889531, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0592e083344df434ca6d0db8c55854d7, type: 3}

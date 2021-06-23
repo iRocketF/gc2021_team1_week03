@@ -40,7 +40,7 @@ AudioSource:
   m_GameObject: {fileID: 541463278}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 62ef3b89eb546e145af1591c32d1804b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 722bbe34c3fb7d348bb489c59f279ca8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -180,6 +180,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: afc6fc42108788a438ae32bda23dd995, type: 3}
   - {fileID: 8300000, guid: 120b1e9204b9f0e498dba440612c2694, type: 3}
   - {fileID: 8300000, guid: f26ffd197f34a4348b07de4ae02a17e9, type: 3}
+  mouseSensitivity: 100
+  gameSettingsOK: 0
 --- !u!82 &1385094572034162893
 AudioSource:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ AudioSource:
   m_GameObject: {fileID: 7773221476187587895}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 62ef3b89eb546e145af1591c32d1804b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
