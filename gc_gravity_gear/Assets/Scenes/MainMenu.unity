@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238326270122616747, guid: 5bb298496a148814eb8bd17615cb7179, type: 3}
+      propertyPath: mouseSensitivity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1385094572034162893, guid: 5bb298496a148814eb8bd17615cb7179, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 

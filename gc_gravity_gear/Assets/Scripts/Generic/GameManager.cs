@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private BossHealth bHealth;
     private PlayerHealth pHealth;
 
+    public float mouseSensitivity = 100f;
+
     private bool gameSettingsOK = false;
 
     void Start()
