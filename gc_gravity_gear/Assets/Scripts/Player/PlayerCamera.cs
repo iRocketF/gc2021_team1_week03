@@ -17,6 +17,8 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        mouseSens = FindObjectOfType<GameManager>().mouseSensitivity;
     }
 
     void Update()

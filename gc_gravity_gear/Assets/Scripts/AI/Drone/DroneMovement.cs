@@ -17,12 +17,16 @@ public class DroneMovement : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        player = GameObject.Find("Player");
     }
 
     void Update()
     {
-        FollowPlayer();
+        if (player != null)
+        {
+            FollowPlayer();
+        }
+        
         PingPong();
     }
 
