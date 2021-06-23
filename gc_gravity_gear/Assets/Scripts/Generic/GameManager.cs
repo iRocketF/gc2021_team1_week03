@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public float mouseSensitivity = 100f;
 
-    private bool gameSettingsOK = false;
+    public bool gameSettingsOK = false;
 
     void Start()
     {
