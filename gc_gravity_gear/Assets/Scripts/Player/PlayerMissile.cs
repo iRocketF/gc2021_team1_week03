@@ -10,6 +10,8 @@ public class PlayerMissile : MonoBehaviour
     private bool spawnedEffect;
 
     public GameObject blastEffect;
+    public GameObject enemyHitEffect;
+    public GameObject bossCritEffect;
 
     private Rigidbody rBody;
 
@@ -36,7 +38,8 @@ public class PlayerMissile : MonoBehaviour
 
             if (!spawnedEffect)
             {
-                GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+                //print("BLASTO!");
+                GameObject blastClone = Instantiate(enemyHitEffect, transform.position, transform.rotation);
                 spawnedEffect = true;
             }
             Destroy(gameObject);
@@ -50,7 +53,7 @@ public class PlayerMissile : MonoBehaviour
 
             if (!spawnedEffect)
             {
-                GameObject blastClone = Instantiate(blastEffect, transform.position, transform.rotation);
+                GameObject blastClone = Instantiate(bossCritEffect, transform.position, transform.rotation);
                 spawnedEffect = true;
             }
             Destroy(gameObject);
