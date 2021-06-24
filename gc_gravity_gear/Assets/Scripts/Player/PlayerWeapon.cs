@@ -11,6 +11,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public GameObject projectile;
     public Transform projectileSpawn;
+    public GameObject muzzleFlash;
 
 
     void Update()
@@ -28,6 +29,7 @@ public class PlayerWeapon : MonoBehaviour
         isShooting = true;
 
         GameObject projectileClone = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
+        Instantiate(muzzleFlash,projectileSpawn.position,projectileSpawn.transform.rotation,projectileSpawn.transform);
         // Physics.IgnoreCollision(projectileClone.GetComponent<Collider>(), GetComponent<Collider>());
 
         isShooting = false;

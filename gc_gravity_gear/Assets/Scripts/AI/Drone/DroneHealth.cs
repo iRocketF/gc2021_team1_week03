@@ -5,6 +5,7 @@ using UnityEngine;
 public class DroneHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100;
+    public GameObject deathExplosion;
     private float currentHealth;
 
     void Start()
@@ -18,6 +19,7 @@ public class DroneHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Instantiate(deathExplosion, transform.position, transform.rotation);
             Destroy(transform.parent.gameObject);
         }
     }
