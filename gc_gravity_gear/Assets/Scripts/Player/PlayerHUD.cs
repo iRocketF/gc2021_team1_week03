@@ -14,6 +14,7 @@ public class PlayerHUD : MonoBehaviour
     public Image bossHealthBar;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI deathText;
+    public TextMeshProUGUI gameEndText;
 
 
     private void Start()
@@ -33,5 +34,11 @@ public class PlayerHUD : MonoBehaviour
             deathText.enabled = false;
         else
             deathText.enabled = true;
+
+        if (manager.isBossAlive)
+            gameEndText.enabled = false;
+        else
+            gameEndText.enabled = true;
+
     }
 }

@@ -20,6 +20,8 @@ public class PlayerMissile : MonoBehaviour
     {
         spawnedEffect = false;
         rBody = GetComponent<Rigidbody>();
+
+        Physics.IgnoreLayerCollision(8, 10);
     }
 
     void Update()
