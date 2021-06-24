@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
         {
-            if (!gameSettingsOK)
-            {
-                Debug.Log("Set them up");
-                SetGameSettings();
-            }
+            //if (!gameSettingsOK)
+            // {
+            //    Debug.Log("Set them up");
+            SetGameSettings();
+            // }
 
             CheckPlayerStatus();
             CheckBossStatus();
@@ -110,13 +110,13 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
-        gameSettingsOK = false;
+        // gameSettingsOK = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void SetGameSettings()
     {
-        gameSettingsOK = true;
+        // gameSettingsOK = true;
 
         pHealth = FindObjectOfType<PlayerHealth>();
         bHealth = FindObjectOfType<BossHealth>();
