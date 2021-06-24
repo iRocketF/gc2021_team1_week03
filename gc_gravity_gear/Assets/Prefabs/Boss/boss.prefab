@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 10000
+  maxHealth: 9000
   dmgTimer: 0
   dmgCooldown: 0.2
   hasTakenDamage: 0

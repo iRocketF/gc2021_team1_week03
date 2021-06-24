@@ -14,6 +14,6 @@ public class SettingsMenuUI : MonoBehaviour
     public void BackToMainMenu()
     {
         Debug.Log("Back pressed, go to main menu");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

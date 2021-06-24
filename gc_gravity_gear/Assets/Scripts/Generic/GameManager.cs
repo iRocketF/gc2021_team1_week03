@@ -34,13 +34,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
         {
             //if (!gameSettingsOK)
             // {
             //    Debug.Log("Set them up");
-            SetGameSettings();
             // }
+
+            SetGameSettings();
 
             CheckPlayerStatus();
             CheckBossStatus();
