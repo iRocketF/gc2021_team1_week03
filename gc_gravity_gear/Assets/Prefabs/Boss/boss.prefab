@@ -316,19 +316,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4.525294, z: 4.5069237}
   m_Center: {x: 3.935654e-16, y: 1.7626469, z: 0.24653816}
---- !u!65 &818392400
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2858149684858831915}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7697966, y: 1.7518959, z: 2.2377985}
-  m_Center: {x: -0.011182189, y: 4.921417, z: 1.1170405}
 --- !u!95 &8899776325591079160
 Animator:
   serializedVersion: 3
@@ -365,7 +352,7 @@ MonoBehaviour:
   dmgTimer: 0
   dmgCooldown: 0.2
   hasTakenDamage: 0
-  deathEffect: {fileID: 387801595188855970, guid: b40d24f5b5d091d429bc129e67ee5acc, type: 3}
+  deathEffect: {fileID: 5892956181871137143, guid: 74c7fe5cf114e8243ad98f8b7f39dc91, type: 3}
 --- !u!1 &3919979714423220973
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,15 +920,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565723974, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00033
+      value: 0.00026
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565723974, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0046
+      value: -0.00462
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565723974, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00236
+      value: 0.00268
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565723974, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -971,13 +958,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565723975, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 652c69455c3d662459ab3e3f5f1ff95f, type: 2}
     - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: moveWithTransform
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.inheritParticleColor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 193
+      value: 1217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.b
+      value: 0.71670115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.g
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.r
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 0.07226771
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305564268565724088, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 0.07247758
       objectReference: {fileID: 0}
     - target: {fileID: 7305564268565724089, guid: 92dc1877b057b224286cc64416bea35b, type: 3}
       propertyPath: damage

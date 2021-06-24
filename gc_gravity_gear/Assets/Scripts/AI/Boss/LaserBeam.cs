@@ -29,7 +29,6 @@ public class LaserBeam : MonoBehaviour
         {
             if (health)
                 health.TakeDamage(damage);
-            
         }
     }
 }

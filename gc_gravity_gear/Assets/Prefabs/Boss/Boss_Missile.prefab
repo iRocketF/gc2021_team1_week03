@@ -5214,7 +5214,7 @@ MonoBehaviour:
   force: 15
   rotationForce: 2
   target: {fileID: 0}
-  blastEffect: {fileID: 387801595188855970, guid: 1ab5b4aea1f842c43bdca5cfd67aefec, type: 3}
+  blastEffect: {fileID: 5892956181871137143, guid: 74c7fe5cf114e8243ad98f8b7f39dc91, type: 3}
 --- !u!82 &2294773933534504747
 AudioSource:
   m_ObjectHideFlags: 0

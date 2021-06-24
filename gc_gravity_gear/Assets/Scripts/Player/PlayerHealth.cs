@@ -57,9 +57,6 @@ public class PlayerHealth : MonoBehaviour
             }
         }            
 
-        else
-            //Debug.Log("Dmg blocked by mercy frames");
-
         hasTakenDamage = true;
 
     }

@@ -12,7 +12,12 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject projectile;
     public Transform projectileSpawn;
     public GameObject muzzleFlash;
+    public AudioSource gunSound;
 
+    private void Start()
+    {
+        gunSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -27,6 +32,9 @@ public class PlayerWeapon : MonoBehaviour
     void Fire()
     {
         isShooting = true;
+
+        gunSound.pitch = Random.Range(0.5f, 1f);
+        gunSound.Play();
 
         GameObject projectileClone = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
         Instantiate(muzzleFlash,projectileSpawn.position,projectileSpawn.transform.rotation,projectileSpawn.transform);
